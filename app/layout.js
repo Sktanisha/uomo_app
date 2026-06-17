@@ -1,5 +1,8 @@
 import "./globals.css";
-import { Jost } from "next/font/google";
+import { Jost, Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const jost = Jost({
   subsets:["latin"],
@@ -8,7 +11,7 @@ const jost = Jost({
 export default function RootLayout({children}) {
   return (
     <html
-      lang="en"
+      lang="en" className={cn("font-sans", geist.variable)}
     >
       <body>
         className={jost.variable}
