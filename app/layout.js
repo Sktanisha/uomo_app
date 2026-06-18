@@ -11,10 +11,9 @@ const jost = Jost({
 export default function RootLayout({children}) {
   return (
     <html
-      lang="en" className={cn("font-sans", geist.variable)}
-    >
-      <body>
-        className={jost.variable}
+      lang="en" className={cn("font-sans", geist.variable)}>
+      <body className={jost.variable}>
+        
         {children}</body>
     </html>
   );
