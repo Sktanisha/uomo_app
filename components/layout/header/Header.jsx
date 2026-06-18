@@ -1,11 +1,12 @@
 import React from 'react'
+import Topheader from './Topheader';
 
 const Header = () => {
   return (
-    <div>
-      
-    </div>
-  )
+    <header>
+      <Topheader/>
+    </header>
+  );
 }
 
 export default Header
