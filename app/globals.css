@@ -137,8 +137,10 @@
 
 @layer components{
   .list-item{
-    @apply text-sm font-medium text-white leading-6 after:content-[''] 
+    @apply relative text-sm font-medium text-white leading-6 after:content-[''] 
     after:w-0 hover:after:w-full duration-500 after:h-0.5 after:bg-white after:absolute after:bottom-0 after:left-0;
   }
 }
+
+
 }
