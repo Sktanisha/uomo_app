@@ -7,16 +7,18 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import { Navigation,Pagination } from 'swiper/modules';
 import { ChevronRight,ChevronLeft  } from 'lucide-react';
+import 'swiper/css/pagination';
 const Banner = () => {
   return (
-    <section className="pt-31 pb-26.75" style={{ background: `url(${bgImage.src})` }} >
+    <section className="pt-31 pb-26.75 relative" style={{ background: `url(${bgImage.src})` }} >
       <Container>
-        <Swiper modules={[Navigation]}    navigation={{
+        <Swiper modules={[Navigation,Pagination]}    navigation={{
           nextEl:".custom-next",
           prevEl:".custom-prev",
-        }} loop={true} >
+        }} loop={true} 
+        pagination={{clickable:true,}} >
           <SwiperSlide>
             <div className="flex justify-between">
           <div>

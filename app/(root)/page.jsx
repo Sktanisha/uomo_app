@@ -1,10 +1,13 @@
 import React from 'react'
+import Content from '../../components/home/Content'
+import Banner from '../../components/home/Banner'
 
 const page = () => {
   return (
-    <div>
-
-    </div>
+    <main>
+      <Banner/>
+      <Content/>
+    </main>
   )
 }
 
