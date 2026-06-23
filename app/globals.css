@@ -173,8 +173,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 }
+ .rr--space-sm .rr--svg{
+  padding: 25% !important;
+ }
 
+ .rr--dir-x{
+  width: 100px !important;
+ }
 
 }
