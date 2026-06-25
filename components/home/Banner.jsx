@@ -12,7 +12,9 @@ import { ChevronRight,ChevronLeft  } from 'lucide-react';
 import 'swiper/css/pagination';
 const Banner = () => {
   return (
-    <section className="pt-31 pb-26.75 relative" style={{ background: `url(${bgImage.src})` }} >
+    <section
+    id="banner"
+    className="pt-31 pb-26.75 relative" style={{ background: `url(${bgImage.src})` }} >
       <Container>
         <Swiper modules={[Navigation,Pagination]}    navigation={{
           nextEl:".custom-next",

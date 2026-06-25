@@ -140,14 +140,14 @@
     @apply relative text-sm font-medium text-white leading-6 after:content-[''] 
     after:w-0 hover:after:w-full duration-500 after:h-0.5 after:bg-white after:absolute after:bottom-0 after:left-0;
   }
-  .swiper-pagination {
+  #banner .swiper-pagination {
   display: flex;
   align-items: center;
   gap: 24px;
   overflow: visible !important;
 }
 
-.swiper-pagination-bullet {
+#banner .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
   background: #DDC2B9 !important;
@@ -157,12 +157,12 @@
   overflow: visible !important;
 }
 
-.swiper-pagination-bullet-active {
+#banner .swiper-pagination-bullet-active {
   background: black !important;
   position: relative;
 }
 
-.swiper-pagination-bullet-active::after {
+#banner .swiper-pagination-bullet-active::after {
   content: "";
   position: absolute;
   width: 20px;

@@ -5,7 +5,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Product from "../common/Product";
 
 const FeaturedProduct = async() => {
-  const response = await fetch("https://dummyjson.com/products");
+const response = await fetch("https://dummyjson.com/products");
 const data = await response.json();
 
 const products = data.products;
