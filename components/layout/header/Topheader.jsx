@@ -3,6 +3,7 @@ import Logo from "../../common/Logo";
 import Searchinput from "./Searchinput";
 import Container from "../Container";
 import { UserRound, Heart, Handbag, Menu } from "lucide-react";
+import HeaderCart from "./HeaderCart";
 
 const Topheader = () => {
   return (
@@ -18,10 +19,7 @@ const Topheader = () => {
             <button>
               <Heart size={20} color="white" />
             </button>
-            <button className="relative">
-              <Handbag size={20} color="white" />
-              <span className="text-[10px] font-medium text-white rounded-full size-4 bg-primary absolute -bottom-1.25 -right-2.5">3</span>
-            </button>
+            <HeaderCart/>
             <button>
               <Menu size={20} color="white" />
             </button>
