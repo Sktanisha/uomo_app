@@ -2,8 +2,9 @@ import React from "react";
 import Logo from "../../common/Logo";
 import Searchinput from "./Searchinput";
 import Container from "../Container";
-import { UserRound, Heart, Handbag, Menu } from "lucide-react";
+import { Heart, Menu } from "lucide-react";
 import HeaderCart from "./HeaderCart";
+import HeaderLogin from "./HeaderLogin";
 
 const Topheader = () => {
   return (
@@ -13,9 +14,7 @@ const Topheader = () => {
           <Logo />
           <Searchinput />
           <div className="flex ml-auto gap-7.5">
-            <button>
-              <UserRound size={20} color="white" />
-            </button>
+            <HeaderLogin/>
             <button>
               <Heart size={20} color="white" />
             </button>
