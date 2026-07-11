@@ -13,15 +13,15 @@ import {
 const HeaderLogin = () => {
   return (
     <Sheet>
-      <SheetTrigger >
-        <button>
+      <SheetTrigger asChild>
+        <button className="">
           <UserRound size={20} color="white" />
         </button>
       </SheetTrigger>
 
       <SheetContent side="right" className="w-90 px-6 py-6">
         <SheetHeader className="border-b pb-5">
-          <SheetTitle className="text-base font-semibold tracking-wide uppercase">
+          <SheetTitle className="text-base font-medium tracking-wide uppercase">
             LOGIN
           </SheetTitle>
         </SheetHeader>

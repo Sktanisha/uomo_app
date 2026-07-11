@@ -7,28 +7,30 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Search } from 'lucide-react';
+import { Search } from "lucide-react";
+
 const Searchinput = () => {
   const items = [
     { label: "T-shirt", value: "T-shirt" },
     { label: "Sharee", value: "Sharee" },
     { label: "Punjabi", value: "Punjabi" },
   ];
+
   return (
-    <div className="w-136 h-12.5 relative flex items-center">
+    <div className="relative flex h-12 w-full items-center">
       <input
-        className="w-full h-full rounded-sm pl-5 bg-white"
         type="text"
-        placeholder="Search products.."
+        placeholder="Search products..."
+        className="h-full w-full rounded-sm bg-white pl-4 pr-36 text-sm outline-none"
       />
-      <div className="absolute right-4 flex gap-4.25  items-center">
+
+      <div className="absolute right-3 flex items-center gap-3">
+
         <Select>
-          <SelectTrigger className="w-25 border-none">
-            <span className="text-sm font-normal leading-6  text-primary-black">
-            <SelectValue  placeholder="All Category" />
-            </span>
-            
+          <SelectTrigger className="w-24 border-none shadow-none">
+            <SelectValue placeholder="All Category" />
           </SelectTrigger>
+
           <SelectContent>
             <SelectGroup>
               {items.map((item) => (
@@ -39,11 +41,12 @@ const Searchinput = () => {
             </SelectGroup>
           </SelectContent>
         </Select>
+
         <button>
-         <Search />
-       </button>
+          <Search size={20} />
+        </button>
+
       </div>
-       
     </div>
   );
 };

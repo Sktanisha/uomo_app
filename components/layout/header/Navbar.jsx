@@ -30,7 +30,7 @@ const Navbar = () => {
 
 ];
   return (
-    <nav className="bg-primary pt-5.25 pb-3.75">
+    <nav className="hidden md:block bg-primary pt-5.25 pb-3.75">
       <Container>
         <ul className="flex gap-11">
         {
