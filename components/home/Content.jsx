@@ -103,9 +103,9 @@ const Content = () => {
     },
   ];
   return (
-    <section className="bg-[#F7F5EE]">
+    <section className="bg-[#F7F5EE] pt-5 md:pt-0">
       <Container>
-        <div className="flex justify-between">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-7.5 ">
           {contentData.map((item) => (
             <ContentCard key={item.id} item={item} />
           ))}
