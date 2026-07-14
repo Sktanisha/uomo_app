@@ -4,9 +4,9 @@ import Title from "../common/Title";
 import CategoryItem from "./CategoryItem";
 const Category = () => {
   return (
-    <section className="bg-[#F7F5EE] pt-25 pb-23.75 ">
+    <section className="bg-[#F7F5EE] pt-10 md:pt-25 md:pb-23.75 ">
       <Container>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap gap-y-3 md:gap-y-0 md:flex-nowrap items-center justify-between">
           <Title name="Shop By Category" />
           <div>
             <button
@@ -17,7 +17,7 @@ const Category = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-5 gap-4 justify-between mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-0 justify-between mt-10">
             {
             Array.from({length:5}).map((_,index)=>(
             <CategoryItem key={index}/> 
