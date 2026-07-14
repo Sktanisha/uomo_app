@@ -6,10 +6,10 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 const Product = ({item}) => {
   return (
-    <div className="border relative group border-[#E4E4E4] hover:shadow-lg duration-300 hover:shadow-primary-black/2.5 w-[255px] rounded-lg overflow-hidden mb-4.5">
-      {item?.thumbnail ? <Image className="w-[255px] h-[200px] object-contain" src={item?.thumbnail} alt="product" width={255} height={200} />
+    <div className="border relative group border-[#E4E4E4] hover:shadow-lg duration-300 hover:shadow-primary-black/2.5 md:w-63.75 rounded-lg overflow-hidden mb-4.5">
+      {item?.thumbnail ? <Image className="md:w-63.75 h-50 object-contain" src={item?.thumbnail} alt="product" width={255} height={200} />
       :
-      <Image src={ProductImage} alt="product" width={255} height={200} />
+      <Image className="w-full h-auto" src={ProductImage} alt="product" width={255} height={200} />
       }
       <div className="hidden group-hover:block absolute left-2/4 translate-x-[-50%]">
         <ul className="flex items-center gap-2.5 justify-center -mt-5">
@@ -74,7 +74,7 @@ const Product = ({item}) => {
           </li>
         </ul>
       </div>
-      <div className="pt-8.5 pl-5 pr-8.25 pb-3.25">
+      <div className="pt-8.5 pl-3 md:pl-5 pr-3 md:pr-8.25 pb-3.25">
         <h4 className="font-normal text-sm text-primary-gray">T-shirt</h4>
         <h2 className="truncate font-normal text-[15px] text-primary-black mt-0.5">
           {item?.title ||  "Men stylist T-shirt"}

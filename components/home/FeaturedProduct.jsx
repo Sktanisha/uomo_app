@@ -18,33 +18,30 @@ console.log("content-type:", data.headers.get("content-type"));
 let text = await data.text();
 console.log(text); */
   return (
-    <section className="mt-24.25">
+    <section className="mt-10 md:mt-24.25 mb-10 md:mb-24.25">
       <Container className="relative">
         <Title name="Featured Products" />
-        <div className="mt-8.75">
+        <div className=" md:mt-8.75">
           <Tabs defaultValue="best-sellers">
-            <div className="absolute top-2.75 right-0 ">
-              <TabsList variant="line">
+            <div className="static md:absolute top-2.75 right-0 ">
+              <TabsList className="flex-wrap" variant="line">
                 <TabsTrigger
-                  className="after:w-[50%] after:left-0 px-0"
-                  value="best-sellers"
-                >
+                  className="after:w-[50%] after:left-0 px-0 ml-1 md:ml-13.5 text-primary-gray"
+                  value="best-sellers">
                   Best Sellers
                 </TabsTrigger>
                 <TabsTrigger
-                  className="after:w-[50%] after:left-0 px-0 ml-13.5"
-                  value="most-popular"
-                >
+                  className="after:w-[50%] after:left-0 px-0 ml-1 md:ml-13.5 text-primary-gray"
+                  value="most-popular">
                   Most Popular
                 </TabsTrigger>
                 <TabsTrigger
-                  className="after:w-[50%] after:left-0 px-0 ml-13.5"
-                  value="top-20"
-                >
+                  className="after:w-[50%] after:left-0 px-0 ml-1 md:ml-13.5 text-primary-gray"
+                  value="top-20">
                   Top 20
                 </TabsTrigger>
                 <TabsTrigger
-                  className="after:w-[50%] after:left-0 px-0 ml-13.5"
+                  className="after:w-[50%] after:left-0 px-0 ml-1 md:ml-13.5 text-primary-gray"
                   value="best-rated"
                 >
                   Best Rated
@@ -52,24 +49,24 @@ console.log(text); */
               </TabsList>
             </div>
             <TabsContent value="best-sellers">
-              <div className="grid grid-cols-5 gapy-7.5">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-y-7.5">
                 {Array.from({ length: 10 }).map((_, index) => (
                   <Product />
                 ))}
               </div>
             </TabsContent>
             <TabsContent value="most-popular">
-             <div className="grid grid-cols-5 gapy-7.5">
+             <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-y-7.5">
                 {products?.map((item) => (
                   <Product  key={item.id} item={item}/>
                 ))}
               </div>
             </TabsContent>
             <TabsContent value="top-20">
-              <p>something</p>
+              <div className=" grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-y-7.5">something</div>
             </TabsContent>
             <TabsContent value="best-rated">
-              <p>some impo</p>
+              <div className=" grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-y-7.5">some impo</div>
             </TabsContent>
           </Tabs>
         </div>
