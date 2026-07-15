@@ -13,11 +13,13 @@ import {
 const HeaderLogin = () => {
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <button className="">
-          <UserRound size={20} color="white" />
-        </button>
-      </SheetTrigger>
+      <SheetTrigger
+        render={
+          <button>
+            <UserRound size={20} color="white" />
+          </button>
+        }
+      />
 
       <SheetContent side="right" className="w-90 px-6 py-6">
         <SheetHeader className="border-b pb-5">
@@ -27,7 +29,6 @@ const HeaderLogin = () => {
         </SheetHeader>
 
         <div className="mt-8">
-
           {/* Email */}
           <div className="mb-5">
             <input
@@ -48,19 +49,14 @@ const HeaderLogin = () => {
 
           {/* Remember Me */}
           <div className="flex items-center justify-between mb-6">
-
             <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
               <input type="checkbox" />
               Remember me
             </label>
 
-            <Link
-              href="#"
-              className="text-sm underline hover:text-black"
-            >
+            <Link href="#" className="text-sm underline hover:text-black">
               Lost password?
             </Link>
-
           </div>
 
           {/* Login Button */}
@@ -71,14 +67,10 @@ const HeaderLogin = () => {
           {/* Register */}
           <p className="text-center text-sm text-gray-500 mt-8">
             No account yet?{" "}
-            <Link
-              href="#"
-              className="font-medium text-black underline"
-            >
+            <Link href="#" className="font-medium text-black underline">
               Create Account
             </Link>
           </p>
-
         </div>
       </SheetContent>
     </Sheet>

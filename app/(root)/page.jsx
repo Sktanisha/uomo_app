@@ -6,7 +6,10 @@ import Category from '../../components/home/Category'
 import TopSellingProduct from '../../components/home/TopSellingProduct'
 import Discount from '../../components/home/Discount'
 import Blog from '../../components/home/Blog'
-
+export const metadata={
+    title:"Shop | Uomo Ecommerce",
+    description:"Uomo Ecommerece"
+}
 const page = () => {
   return (
     <main>

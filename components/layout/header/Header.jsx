@@ -4,11 +4,11 @@ import Navbar from './Navbar';
 
 const Header = () => {
   return (
-    <header>
+    <header className='sticky top-0 z-50'>
       <Topheader/>
       <Navbar/>
     </header>
-  );
+  ); 
 }
 
 export default Header

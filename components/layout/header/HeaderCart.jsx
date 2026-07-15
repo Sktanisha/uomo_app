@@ -46,14 +46,17 @@ const HeaderCart = () => {
   };
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <button className="relative">
+      <SheetTrigger
+        render={
+          <button className="relative">
           <Handbag size={20} color="white" />
           <span className="absolute -right-2.5 -bottom-1.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-medium text-white">
             {cartItems.length}
           </span>
         </button>
-      </SheetTrigger>
+        }
+        />
+      
 
       <SheetContent side="right" className="w-95 p-0">
         <div className="border-b px-6 py-5">

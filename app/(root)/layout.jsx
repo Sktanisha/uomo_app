@@ -5,7 +5,7 @@ import Banner from '../../components/home/Banner';
 
 export default function Mainlayout({children}){
     return ( <>
-    <Header/>
+    <Header />
     
     {children}
     <Footer/>

@@ -9,5 +9,3 @@ const Title = ({name}) => {
 }
 
 export default Title
-
-//56.40

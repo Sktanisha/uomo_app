@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Logo from "../../common/Logo";
 import Searchinput from "./Searchinput";
 import Container from "../Container";
@@ -10,34 +10,48 @@ import HeaderLogin from "./HeaderLogin";
 import Link from "next/link";
 
 const Topheader = () => {
-  const navData = [
-    { 
+  /* const[isScrolled,setIsScrolled]= useState(false);
+  const [open,setOpen]=useState(false); */
+ const navData = [
+  {
     id: 1,
-    name:"HOME"
-    },
-    { 
+    name: "HOME",
+    href: "/",
+  },
+  {
     id: 2,
-    name:"SHOP"
-    },
-    { 
+    name: "SHOP",
+    href: "/shop",
+  },
+  {
     id: 3,
-    name:"COLLECTION"
-    },
-    { 
+    name: "COLLECTION",
+    href: "/collection",
+  },
+  {
     id: 4,
-    name:"JOURNAL"
-    },
-    { 
+    name: "JOURNAL",
+    href: "/journal",
+  },
+  {
     id: 5,
-    name:"LOOKBOOK"
-    },
-    { 
+    name: "LOOKBOOK",
+    href: "/lookbook",
+  },
+  {
     id: 6,
-    name:"PAGES"
-    }
-
+    name: "PAGES",
+    href: "/pages",
+  },
 ];
-  const [mobileMenu, setMobileMenu] = useState(false);
+
+/* useEffect(()=>{
+  window.addEventListener("scroll",()=>{
+
+  })
+},[]);*/
+
+  const [mobileMenu, setMobileMenu] = useState(false); 
 
   return (
     <div className="bg-secondary py-4 lg:py-5">
@@ -100,7 +114,7 @@ const Topheader = () => {
               <ul className="flex:col gap-4 md:gap-11">
                 {navData.map((navList) => (
                   <li key={navList.id} className="list-item">
-                    <Link href={`${navList.id}`}>{navList.name}</Link>
+                    <Link href={navList.href || "#"}>{navList.name}</Link>
                   </li>
                 ))}
               </ul>

@@ -5,43 +5,46 @@ const Navbar = () => {
   const navData = [
     { 
     id: 1,
-    name:"HOME"
+    name:"HOME",
+    href:"/",
     },
     { 
     id: 2,
-    name:"SHOP"
+    name:"SHOP",
+    href:"/shop",
     },
     { 
     id: 3,
-    name:"COLLECTION"
+    name:"COLLECTION",
+    href:"/collection",
     },
     { 
     id: 4,
-    name:"JOURNAL"
+    name:"JOURNAL",
+    href:"/journal",
     },
     { 
     id: 5,
-    name:"LOOKBOOK"
+    name:"LOOKBOOK",
+    href:"/lookbook",
     },
     { 
     id: 6,
-    name:"PAGES"
+    name:"PAGES",
+    href:"/pages",
     }
 
 ];
-  return (
+   return (
     <nav className="hidden md:block bg-primary pt-5.25 pb-3.75">
       <Container>
         <ul className="flex gap-11">
-        {
-            navData.map((navList)=>(
-                <li key={navList.id} className="list-item">
-                    <Link href={`${navList.id}`}>{navList.name}</Link>
-                </li>
-            ))
-        }
+          {navData.map((navList) => (
+            <li key={navList.id} className="list-item">
+              <Link href={navList.href}>{navList.name}</Link>
+            </li>
+          ))}
         </ul>
-        
       </Container>
     </nav>
   );

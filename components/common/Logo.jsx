@@ -1,7 +1,11 @@
 import Image from "next/image"
+import Link from "next/link";
 const Logo = () => {
   return (
-    <Image src="/images/logo.png" alt="logo" width={111} height={27}/>
+    <Link href="/" aria-label="logo">
+      <Image src="/images/logo.png" alt="logo" width={111} height={27}/>
+    </Link>
+    
   );
 };
 
