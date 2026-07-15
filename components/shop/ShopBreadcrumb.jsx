@@ -12,12 +12,12 @@ const ShopBreadcrumb = () => {
 
   return (
     <nav aria-label="Breadcrumb">
-      <ol className="flex items-center gap-2 text-sm text-gray-500">
+      <ul className="flex items-center uppercase font-medium gap-2 text-sm text-primary-black">
         {/* Home */}
         <li>
           <Link
             href="/"
-            className="hover:text-primary transition-colors"
+            className="text-sm text-primary-black"
           >
             Home
           </Link>
@@ -35,18 +35,18 @@ const ShopBreadcrumb = () => {
           return (
             <li
               key={href}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 text-sm"
             >
               <ChevronRight size={16} />
 
               {isLast ? (
-                <span className="font-medium text-primary-black">
+                <span >
                   {title}
                 </span>
               ) : (
                 <Link
                   href={href}
-                  className="hover:text-primary transition-colors"
+                  
                 >
                   {title}
                 </Link>
@@ -54,7 +54,7 @@ const ShopBreadcrumb = () => {
             </li>
           );
         })}
-      </ol>
+      </ul>
     </nav>
   );
 };

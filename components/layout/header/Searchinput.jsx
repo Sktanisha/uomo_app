@@ -27,7 +27,7 @@ const Searchinput = () => {
       <div className="absolute right-3 flex items-center gap-3">
 
         <Select>
-          <SelectTrigger className="w-24 border-none shadow-none">
+          <SelectTrigger className="w-full border-none shadow-none">
             <SelectValue placeholder="All Category" />
           </SelectTrigger>
 
