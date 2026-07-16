@@ -32,7 +32,7 @@ const AllProducts = () => {
           <Product key={item.id} item={item} />
         ))}
       </div> */}
-      <Paginate itemsPerPage={4} products={products}/>
+      <Paginate itemsPerPage={8} products={products}/>
     </div>
   );
 };

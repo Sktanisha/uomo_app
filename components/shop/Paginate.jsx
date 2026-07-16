@@ -2,19 +2,25 @@
 import React, { useState } from 'react'
 import ReactPaginate from 'react-paginate';
 import Product from '../common/Product';
+import { useProductView } from '../../store/useProductView';
 const Paginate = ({ itemsPerPage,products }) => {
     const items = products;
+    const {view} = useProductView();
 
 function Items({ currentItems }) {
   return (
-    <>
+    <div style={{
+        display:"grid",
+        gridTemplateColumns:`repeat(${view},1fr)`,
+        gap:"20px",
+      }}>
       {currentItems &&
         currentItems.map((item) => (
           <div>
             <Product key={item.id} item={item}/>
           </div>
         ))}
-    </>  
+    </div>  
   );
 }
 const [itemOffset, setItemOffset] = useState(0);
@@ -37,11 +43,14 @@ const [itemOffset, setItemOffset] = useState(0);
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        className='flex items-center gap-4 justify-center mt-10'
+        pageClassName='border border-primary-black px-4 py-2 rounded-md'
+        activeClassName='bg-primary-black text-white'
+        nextLabel="Next >"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel="< Previous"
         renderOnZeroPageCount={null}
       />
     </>
