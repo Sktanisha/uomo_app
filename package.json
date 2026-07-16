@@ -19,6 +19,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-paginate": "^8.3.0",
+    "react-scroll-to-top": "^3.1.0",
     "react-simple-star-rating": "^5.1.7",
     "shadcn": "^4.11.0",
     "swiper": "^12.2.0",
