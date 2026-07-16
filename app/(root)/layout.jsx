@@ -1,15 +1,33 @@
-import React from 'react'
+"use client";
+
+import { useEffect, useState } from "react";
+
 import Header from "../../components/layout/header/Header";
-import Footer from '../../components/layout/footer/Footer';
-import Banner from '../../components/home/Banner';
+import Footer from "../../components/layout/footer/Footer";
+import Loading from "../Loading";
 
-export default function Mainlayout({children}){
-    return ( <>
-    <Header />
-    
-    {children}
-    <Footer/>
+export default function MainLayout({ children }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  return (
+    <>
+      <Header />
+
+      <main>{children}</main>
+
+      <Footer />
     </>
-
-    );
+  );
 }
