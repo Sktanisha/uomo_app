@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Product from "../common/Product";
 import { useProductView } from "../../store/useProductView";
+import Paginate from "./Paginate";
 
 const AllProducts = () => {
   const [products, setProducts] = React.useState([]);
@@ -21,7 +22,7 @@ const AllProducts = () => {
 
   return (
     <div>
-      <div style={{
+      {/* <div style={{
         display:"grid",
         gridTemplateColumns:`repeat(${view},1fr)`,
         gap:"20px",
@@ -30,7 +31,8 @@ const AllProducts = () => {
         {products?.map((item) => (
           <Product key={item.id} item={item} />
         ))}
-      </div>
+      </div> */}
+      <Paginate itemsPerPage={4} products={products}/>
     </div>
   );
 };
