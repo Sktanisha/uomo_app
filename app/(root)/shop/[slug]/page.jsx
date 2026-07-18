@@ -12,36 +12,59 @@ import {
   ChevronRight,
 } from "lucide-react";
 import ShopBreadcrumb from "@/components/shop/ShopBreadcrumb";
-import {useParams} from "next/navigation";
+import { useParams } from "next/navigation";
 export default function Page() {
-  const images = [
+  const fallbackImages = [
     "/images/products/productImg1.jpg",
     "/images/products/productImg2.jpg",
     "/images/products/productImg3.jpg",
     "/images/products/productImg4.jpg",
   ];
 
-
-
   const colors = ["#111111", "#7E2D2D", "#D9D9D9"];
 
   const sizes = ["XS", "S", "M", "L", "XL"];
-
-  const [activeImage, setActiveImage] = useState(images[0]);
+  const [images, setImages] = useState(fallbackImages);
+  const [activeImage, setActiveImage] = useState(fallbackImages[0]);
   const [activeSize, setActiveSize] = useState("L");
   const [activeColor, setActiveColor] = useState(colors[1]);
   const [quantity, setQuantity] = useState(1);
 
-  const {slug} = useParams();
+  const { slug } = useParams();
   const [product, setProduct] = useState(null);
 
-
-  useEffect(()=>{
+  /* useEffect(()=>{
     fetch(`https://dummyjson.com/products/${slug}`)
     .then((res)=>res.json())
     .then((data)=>setProduct(data))
     .catch((error)=>console.error(error));
-  },[slug]);
+  },[slug]); */
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const res = await fetch(`https://dummyjson.com/products/${slug}`);
+        const data = await res.json();
+
+        setProduct(data);
+
+        if (data.images && data.images.length > 0) {
+          setImages(data.images); // Replace all thumbnails
+          setActiveImage(data.images[0]); // Show first fetched image
+        } else {
+          setImages(fallbackImages);
+          setActiveImage(fallbackImages[0]);
+        }
+      } catch (error) {
+        console.error(error);
+
+        setImages(fallbackImages);
+        setActiveImage(fallbackImages[0]);
+      }
+    };
+
+    fetchProduct();
+  }, [slug]);
 
   return (
     <main className="max-w-350 mx-auto px-5 lg:px-10 py-12">
@@ -49,14 +72,12 @@ export default function Page() {
 
       <div className="flex items-center justify-between text-sm mb-10">
         <div className="flex items-center gap-2">
-
-        <ShopBreadcrumb/>
+          <ShopBreadcrumb />
           {/* <Link href="/">HOME</Link>
 
           <span>/</span>
 
           <span>THE SHOP</span> */}
-          
         </div>
 
         <div className="flex gap-6 uppercase text-xs">
@@ -102,9 +123,16 @@ export default function Page() {
           {/* Main Image */}
 
           <div className="relative flex-1 h-175 bg-[#F8F8F8] rounded">
-            <Image
+            {/* <Image
               src={activeImage}
               alt="product"
+              fill
+              className="object-contain p-12"
+              priority
+            /> */}
+            <Image
+              src={activeImage}
+              alt={product?.title || "Product"}
               fill
               className="object-contain p-12"
               priority
