@@ -11,7 +11,8 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-
+import ShopBreadcrumb from "@/components/shop/ShopBreadcrumb";
+//55.43
 export default function Page() {
   const images = [
     "/images/products/productImg1.jpg",
@@ -35,6 +36,8 @@ export default function Page() {
 
       <div className="flex items-center justify-between text-sm mb-10">
         <div className="flex items-center gap-2">
+
+        <ShopBreadcrumb/>
           {/* <Link href="/">HOME</Link>
 
           <span>/</span>
