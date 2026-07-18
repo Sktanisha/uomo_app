@@ -7,8 +7,10 @@ import "@smastrom/react-rating/style.css";
 import { useRouter } from "next/navigation";
 const Product = ({item}) => {
   const router = useRouter();
-  const handleProductView ={
+  const handleProductView = ()=>{
     router.push(`/shop/${item?.id}`);
+
+
   };
   return (
     <div className="border relative group border-[#E4E4E4] hover:shadow-lg duration-300 hover:shadow-primary-black/2.5 md:w-63.75 rounded-lg overflow-hidden mb-4.5">

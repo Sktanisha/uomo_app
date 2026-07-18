@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,7 +12,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import ShopBreadcrumb from "@/components/shop/ShopBreadcrumb";
-
+import {useParams} from "next/navigation";
 export default function Page() {
   const images = [
     "/images/products/productImg1.jpg",
@@ -20,6 +20,8 @@ export default function Page() {
     "/images/products/productImg3.jpg",
     "/images/products/productImg4.jpg",
   ];
+
+
 
   const colors = ["#111111", "#7E2D2D", "#D9D9D9"];
 
@@ -29,6 +31,17 @@ export default function Page() {
   const [activeSize, setActiveSize] = useState("L");
   const [activeColor, setActiveColor] = useState(colors[1]);
   const [quantity, setQuantity] = useState(1);
+
+  const {slug} = useParams();
+  const [product, setProduct] = useState(null);
+
+
+  useEffect(()=>{
+    fetch(`https://dummyjson.com/products/${slug}`)
+    .then((res)=>res.json())
+    .then((data)=>setProduct(data))
+    .catch((error)=>console.error(error));
+  },[slug]);
 
   return (
     <main className="max-w-350 mx-auto px-5 lg:px-10 py-12">
