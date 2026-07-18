@@ -4,7 +4,12 @@ import React from "react";
 import ProductImage from "@/assets/images/men-tshirt.jpg";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { useRouter } from "next/navigation";
 const Product = ({item}) => {
+  const router = useRouter();
+  const handleProductView ={
+    router.push(`/shop/${item?.id}`);
+  };
   return (
     <div className="border relative group border-[#E4E4E4] hover:shadow-lg duration-300 hover:shadow-primary-black/2.5 md:w-63.75 rounded-lg overflow-hidden mb-4.5">
       {item?.thumbnail ? <Image className="md:w-63.75 h-50 object-contain" src={item?.thumbnail} alt="product" width={255} height={200} />
@@ -14,7 +19,7 @@ const Product = ({item}) => {
       <div className="hidden group-hover:block absolute left-2/4 translate-x-[-50%]">
         <ul className="flex items-center gap-2.5 justify-center -mt-5">
           <li className="group">
-            <button className="w-10 h-10 duration-500 hover:bg-primary bg-[#F3E8D6] rounded-full flex items-center justify-center">
+            <button  className="w-10 h-10 duration-500 cursor-pointer hover:bg-primary bg-[#F3E8D6] rounded-full flex items-center justify-center">
               <svg
                 width="14"
                 height="14"
@@ -30,7 +35,7 @@ const Product = ({item}) => {
             </button>
           </li>
           <li className="group">
-            <button className="w-10 h-10 duration-500 hover:bg-primary bg-[#F3E8D6] rounded-full flex items-center justify-center">
+            <button onClick={handleProductView} className="w-10 h-10 duration-500 cursor-pointer hover:bg-primary bg-[#F3E8D6] rounded-full flex items-center justify-center">
               <svg
                 width="18"
                 height="18"
@@ -50,7 +55,7 @@ const Product = ({item}) => {
             </button>
           </li>
           <li className="group">
-            <button className="w-10 h-10 duration-500 hover:bg-primary bg-[#F3E8D6] rounded-full flex items-center justify-center">
+            <button className="w-10 h-10 duration-500 cursor-pointer hover:bg-primary bg-[#F3E8D6] rounded-full flex items-center justify-center">
               <svg
                 width="14"
                 height="14"
