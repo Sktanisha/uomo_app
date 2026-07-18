@@ -12,7 +12,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import ShopBreadcrumb from "@/components/shop/ShopBreadcrumb";
-//55.43
+
 export default function Page() {
   const images = [
     "/images/products/productImg1.jpg",
