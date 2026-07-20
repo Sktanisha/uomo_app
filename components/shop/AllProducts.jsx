@@ -5,18 +5,19 @@ import Product from "../common/Product";
 import Paginate from "./Paginate";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useProducts } from "../../store/useProduct";
+import { useProduct } from "../../store/useProduct";
 const AllProducts = () => {
   const [products, setProducts] = React.useState([]);
   //const { view } = useProductView();
   const [loading, setLoading] = React.useState(true);
-
+  const { setProduct } = useProduct()
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch("https://dummyjson.com/products");
         const data = await response.json();
         setProducts(data.products);
+        setProduct(data.products);
       } catch (error) {
 
       }finally{

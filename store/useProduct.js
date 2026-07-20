@@ -1,10 +1,10 @@
 import { create } from 'zustand'
 //import { persist } from 'zustand/middleware';
 
-const useProducts = create(
+const useProduct = create(
     (set) => ({
-    products: [],
-    setProducts: (products) => set({ products }),
+    product: [],
+    setProduct: (product) => set({ product }),
   }));
 
-export { useProducts };
+export { useProduct };
