@@ -5,7 +5,7 @@ import Product from "../common/Product";
 import Paginate from "./Paginate";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-
+import { useProducts } from "../../store/useProduct";
 const AllProducts = () => {
   const [products, setProducts] = React.useState([]);
   //const { view } = useProductView();

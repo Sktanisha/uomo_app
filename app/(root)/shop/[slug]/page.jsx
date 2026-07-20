@@ -20,7 +20,6 @@ export default function Page() {
     "/images/products/productImg3.jpg",
     "/images/products/productImg4.jpg",
   ];
-
   const colors = ["#111111", "#7E2D2D", "#D9D9D9"];
 
   const sizes = ["XS", "S", "M", "L", "XL"];
