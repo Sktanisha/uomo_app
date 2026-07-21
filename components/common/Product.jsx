@@ -90,7 +90,7 @@ const Product = ({item}) => {
           <Rating style={{ maxWidth: 180 }} value={3} readOnly />
           <h6>35,780</h6>
         </div>
-        <h3 className="text-primary text-lg font-normal mt-2.5">$30.99</h3>
+        <h3 className="text-primary text-lg font-normal mt-2.5">${item?.price}</h3>
       </div>
     </div>
   );

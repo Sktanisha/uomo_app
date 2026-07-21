@@ -10,7 +10,24 @@ const AllProducts = () => {
   const [products, setProducts] = React.useState([]);
   //const { view } = useProductView();
   const [loading, setLoading] = React.useState(true);
-  const { setProduct } = useProduct()
+  const { setProduct, selectedCategory, maxPrice } = useProduct();
+
+  /* const filteredProducts =
+  selectedCategory === "all"
+    ? products
+    : products.filter(
+        (item) => item.category === selectedCategory
+      ); */
+
+  const filteredProducts = products.filter((item) => {
+    const categoryMatch =
+      selectedCategory === "all" || item.category === selectedCategory;
+
+    const priceMatch = item.price <= maxPrice;
+
+    return categoryMatch && priceMatch;
+  });
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -19,8 +36,7 @@ const AllProducts = () => {
         setProducts(data.products);
         setProduct(data.products);
       } catch (error) {
-
-      }finally{
+      } finally {
         setLoading(false);
       }
     };
@@ -55,7 +71,7 @@ const AllProducts = () => {
           ))}
         </div>
       ) : (
-        <Paginate itemsPerPage={8} products={products} />
+        <Paginate itemsPerPage={8} products={filteredProducts} />
       )}
     </div>
   );

@@ -1,22 +1,51 @@
 "use client";
 
 import FilterSection from "./FilterSection";
-import {brands,categories,colors,sizes,} from "./filterData";
+import { brands, categories, colors, sizes } from "./filterData";
 import { Search } from "lucide-react";
 import { useProduct } from "../../store/useProduct";
 const ProductSidebar = () => {
-  const { product } = useProduct();
-   const categories = [...new Set(product.map((item) => item.category))];
+  const { product, selectedCategory, setSelectedCategory,maxPrice,
+  setMaxPrice, } = useProduct();
+  const categories = [...new Set(product.map((item) => item.category))];
 
   return (
     <div>
       {/* Categories */}
       <FilterSection title="Product Categories">
-        <ul className="space-y-3">
+        {/* <ul className="space-y-3">
+
           {categories.map((category) => (
             <li
               key={category}
               className="text-sm text-gray-600 hover:text-black cursor-pointer">
+              {category}
+            </li>
+          ))}
+        </ul> */}
+
+        <ul className="space-y-3">
+          <li
+            onClick={() => setSelectedCategory("all")}
+            className={`cursor-pointer ${
+              selectedCategory === "all"
+                ? "font-semibold text-black"
+                : "text-gray-600"
+            }`}
+          >
+            All Products
+          </li>
+
+          {categories.map((category) => (
+            <li
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`cursor-pointer capitalize ${
+                selectedCategory === category
+                  ? "font-semibold text-black"
+                  : "text-gray-600"
+              }`}
+            >
               {category}
             </li>
           ))}
@@ -70,13 +99,9 @@ const ProductSidebar = () => {
             >
               <div className="flex items-center gap-3">
                 <input type="checkbox" />
-                <span className="text-sm text-gray-600">
-                  {brand.name}
-                </span>
+                <span className="text-sm text-gray-600">{brand.name}</span>
               </div>
-              <span className="text-sm text-gray-400">
-                {brand.count}
-              </span>
+              <span className="text-sm text-gray-400">{brand.count}</span>
             </label>
           ))}
         </div>
@@ -84,17 +109,25 @@ const ProductSidebar = () => {
 
       {/* Price */}
       <FilterSection title="Price">
-        <input
-          type="range"
-          min={129}
-          max={499}
-          className="w-full"
-        />
-        <div className="flex justify-between mt-4 text-xs text-gray-500">
-          <span>Min Price: $129</span>
-          <span>Max Price: $499</span>
-        </div>
-      </FilterSection>
+
+  <input
+    type="range"
+    min="0"
+    max="2000"
+    step="10"
+    value={maxPrice}
+    onChange={(e) => setMaxPrice(e.target.value)}
+    className="w-full"
+  />
+
+  <div className="flex justify-between mt-4 text-sm">
+    <span>$0</span>
+    <span className="font-medium">
+      Up to ${maxPrice}
+    </span>
+  </div>
+
+</FilterSection>
     </div>
   );
 };
