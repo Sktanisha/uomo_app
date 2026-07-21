@@ -82,7 +82,7 @@ const Product = ({item}) => {
         </ul>
       </div>
       <div className="pt-8.5 pl-3 md:pl-5 pr-3 md:pr-8.25 pb-3.25">
-        <h4 className="font-normal text-sm text-primary-gray">T-shirt</h4>
+        <h4 className="font-normal text-sm text-primary-gray">{item?.category ||  "Men stylist T-shirt"}</h4>
         <h2 className="truncate font-normal text-[15px] text-primary-black mt-0.5">
           {item?.title ||  "Men stylist T-shirt"}
         </h2>

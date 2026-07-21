@@ -36,7 +36,6 @@ const Searchinput = ({ className }) => {
     const filtered = product.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase()),
     );
-
     setSearchProducts(filtered);
   };
   return (
@@ -71,7 +70,7 @@ const Searchinput = ({ className }) => {
       </div>
 
       {searchProducts.length > 0 && (
-  <div className="absolute top-[52px] left-0 z-50 max-h-80 w-full overflow-y-auto rounded-md border bg-white shadow-lg">
+  <div className="absolute top-13left-0 z-50 max-h-80 w-full overflow-y-auto rounded-md border bg-white shadow-lg">
 
     {searchProducts.map((item) => (
       <div

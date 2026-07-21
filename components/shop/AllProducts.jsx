@@ -45,16 +45,7 @@ const AllProducts = () => {
 
   return (
     <div>
-      {/* <div style={{
-        display:"grid",
-        gridTemplateColumns:`repeat(${view},1fr)`,
-        gap:"20px",
-      }}
-      >
-        {products?.map((item) => (
-          <Product key={item.id} item={item} />
-        ))}
-      </div> */}
+      
       {loading ? (
         <div className="grid grid-cols-4 gap-5">
           {Array.from({ length: 8 }).map((_, index) => (

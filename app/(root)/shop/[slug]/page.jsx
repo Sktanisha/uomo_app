@@ -142,16 +142,14 @@ export default function Page() {
 
         <div>
           <h1 className="text-4xl font-bold text-primary-black">
-            Lightweight Puffer Jacket With a Hood
+            {product?.title || "T-shirt"}
           </h1>
 
-          <p className="text-3xl font-semibold mt-4">$249</p>
+          <p className="text-3xl font-semibold mt-4">{`$${product?.price}` || "$30"}</p>
 
           <p className="mt-6 text-primary-gray leading-8">
-            Cut from a quilted, water-resistant shell and filled with a
-            lightweight synthetic insulation, this jacket layers easily without
-            adding bulk. An attached hood, ribbed cuffs and a two-way front zip
-            keep it practical from commute to weekend.
+            {product?.description || " Cut from a quilted, water-resistant shell and filled with a lightweight synthetic insulation, this jacket layers easily without adding bulk. An attached hood, ribbed cuffs and a two-way front zip keep it practical from commute to weekend."}
+            
           </p>
 
           {/* Sizes */}
