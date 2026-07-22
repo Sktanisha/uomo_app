@@ -10,7 +10,30 @@ import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import "swiper/css/pagination";
+import axios from "axios";
+import apiInstance from "../../lib/axios";
 const Banner = () => {
+  /* useEffect(()=>{
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/banner/banners`)
+    .then((res)=>{
+
+    }).catch((err)=>{
+      console.log(err);
+    })
+    return()=> {
+
+    }
+  },[]) */
+
+  useEffect(()=>{
+    apiInstance.get("/banner/banners")
+    .then((res)=>{
+      console.log(res.data.data)
+    }).catch((err)=>{
+      //console.log(err);
+    })
+  },[])
+
   return (
     <section
       id="banner"
